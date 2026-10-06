@@ -40,7 +40,7 @@ MVP 已于 2026-07-15 完成，当前进入面向小规模公开 Beta 的 Post-M
 默认使用 Mock Judge；Web、API、Worker、MySQL、Redis 和 Mailpit 都在容器中运行。
 
 ```powershell
-git clone https://github.com/wudiqiegaoleng63/ACM-Hot100.git
+git clone https://github.com/lysheon/ACM-Hot100.git
 cd ACM-Hot100
 Copy-Item .env.example .env
 
@@ -225,7 +225,7 @@ docker pull ghcr.io/wudiqiegaoleng63/acmhot100-server@sha256:<digest>
 
 gh attestation verify `
   oci://ghcr.io/wudiqiegaoleng63/acmhot100-server:1.2.3 `
-  -R wudiqiegaoleng63/ACM-Hot100
+  -R lysheon/ACM-Hot100
 ```
 
 真实发布前必须确认 GitHub Packages 权限和目标 Package 可见性。Server 镜像为现有 migration/seed 流程保留了版本化题目数据；Web 使用 Dockerfile 专属 allowlist 构建上下文，不接收 `seed/`、隐藏测试、Server 源码或本地 `.env`。此流程只发布镜像，不执行部署；生产 Compose 与部署属于后续任务。
